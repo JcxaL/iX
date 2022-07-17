@@ -1,0 +1,104 @@
+.body {
+    width: 90%;
+    height: 90%;
+    background-color: azure;
+}
+
+.container{
+    position: relative;
+    margin: 20px;
+    width: 50%;
+    background-color:antiquewhite;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+
+    transition: transform 400ms;
+
+} 
+
+/* Adjusting for screen size */
+@media only screen and (max-width: 1080px) {
+    
+    .container {
+        width: 60%;
+
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    
+    .container {
+        width: 70%;
+
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .container {
+        width: 80%;
+
+    }
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    background-color:antiquewhite;
+    padding: -200px;
+
+    text-align:center;
+    color:slategrey;
+
+    
+}
+
+
+.spinlogo {
+    width: 70px;
+    height: 20px;
+    color: purple;
+    text-align: center;
+    margin-left: -100px;
+
+    animation-name: spin;
+    animation-duration: 10s;
+    animation-delay: 100ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.body1 {
+    position: relative;
+    background-color:silver;
+
+
+}
+
+
+
+.body2 {
+    position: relative;
+    background-color:lightslategrey;
+
+
+}
+
+.container:hover {
+    transform: translateY(10%) scale(1.05);
+}
+
+

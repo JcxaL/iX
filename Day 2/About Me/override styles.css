@@ -1,0 +1,63 @@
+.container:hover {
+    transition: transform 500ms;
+    transform: translateY(10%) scale(1.05);
+}
+#nohover {
+    transform:none;
+}
+
+.spinaround {
+    width: 100px;
+    height: 20px;
+    color:cadetblue;
+    text-align: center;
+
+    animation-name: around;
+    animation-duration: 8s;
+    animation-delay: 50ms;
+    animation-timing-function:ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes around {
+    0% {
+        transform: translate(1vw, 1vh);
+    }
+    25% {
+        transform: translate(95vw, 1vh);
+    }
+    50%{
+        transform: translate(95vw,95vh);
+    }
+    75%{
+        transform: translate(1vw, 95vh);
+    }
+    100%{
+        transform: translate(1vw, 1vh);
+    }
+}
+
+#haha1:after {
+    content: "Click green to win!";
+}
+
+#haha1:hover {
+    background-color: red;
+}
+
+#haha1:hover:after {
+    content: "It's not green at all";
+}
+
+#haha2:after {
+    content: "Try red too?";
+}
+
+#haha2:hover {
+    background-color: green;
+}
+
+#haha2:hover:after {
+    content: "It's not red";
+}
+
