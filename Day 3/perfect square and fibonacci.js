@@ -1,3 +1,4 @@
+// perfect square exercise
 function checkPerSquare(number) {
     if (Math.pow((Math.sqrt(number)), 2) == number) {
         console.log(number+" is a perfect square");
@@ -6,6 +7,8 @@ function checkPerSquare(number) {
     console.log(number+" is not a perfect square");
 }
 
+
+//fib exercise
 function printFib(count){
     console.log(0);
     console.log(1);
