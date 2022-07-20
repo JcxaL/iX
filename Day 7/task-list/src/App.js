@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+import TaskInput from './components/TaskInput';
+import TaskTable from './components/TaskTable';
+
+
+export default function App() {
+
+  const [tasks, setTasks] = useState([]);
+
+  function createTask(task) {
+    // update the tasks state with the new task
+    setTasks([...tasks, task]);
+  }
+
+  function updateTask(task) {
+    const newTasks = tasks.map((t) => {
+      return t.id === task.id ? task : t;
+    });
+    setTasks(newTasks);
+  }
+
+  function removeTask(task) {
+    const newTasks = tasks.filter((t) => {
+      return t.id !== task.id;
+    });
+    setTasks(newTasks);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='container mt-5'>
+      <div className='card card-body text-center'>
+        <h1>Task Manager v0.2</h1>
+        <hr></hr>
+        <div className='text-muted'>
+          Note down your tasks here!
+        </div>
 
-export default App;
+        <TaskInput onTaskCreated={createTask} />
+
+        <TaskTable
+          tasks={tasks}
+          onTaskUpdated={updateTask}
+          onTaskRemove={removeTask}
+        />
+
+      </div>
+    </div>
+  )
+}
