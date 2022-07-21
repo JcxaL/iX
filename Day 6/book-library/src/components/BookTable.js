@@ -8,10 +8,10 @@ export default function BookTable(props) {
   return (
     <div className="mt-1 mx-5">
       <table className="table">
-      <caption className="mt-2">Your library has a total of {
+      <caption className="mt-2">Your library{
         props.books.length === 0 ? 
             " has no books. Try to add some!" 
-            :props.books.length + " books"}</caption>
+            : " has a total of " + props.books.length + " books"}</caption>
         <thead>
           <tr>
             <th className="col-auto">Title</th>
