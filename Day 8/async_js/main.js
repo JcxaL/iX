@@ -1,6 +1,6 @@
 const contacts = [
     { name: 'Alvin', number: '6466422432'} ,
-    { name: 'Crystal', number: "949404900"} ,
+    { name: 'Crystal', number: "9492324045"} ,
 ]
 
 function printContacts() {
